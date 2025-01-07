@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
 
     public void MoveSpeedConditions() 
     {
-        if (PlatformMoving == true) { moveSpeed = 15f; }
+        if (PlatformMoving == true) { moveSpeed = 20f; }
         else { moveSpeed = 7.5f; }
     }
     public void GateOpener() 
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
 
     public void MeleeAttack() 
     {
-        if (Input.GetMouseButton(0)) 
+        if (Input.GetMouseButton(0))    
         {
             if (direction == 1) { StartCoroutine(LeftAttack()); }
             else if (direction == 2) { StartCoroutine(RightAttack()); }
@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
 
         if (collision.collider.CompareTag("Lava"))
         {
-            sceneManagement.RestartScene();
+            Health -= 999;
         }
         if (collision.collider.CompareTag("PlatformMoving"))
         {

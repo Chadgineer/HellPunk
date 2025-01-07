@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     private bool movingToB = true;
     private float t = 0f;
     public float followSpeed = 1;
-    public Transform PlayerWhere;
+    public Transform EnemyLocation;
     private Vector3 originalScale;
 
     [SerializeField] private float Health = 50;
@@ -51,8 +51,8 @@ public class EnemyAI : MonoBehaviour
     }
     void EnemyDirection()
     {
-        if (PlayerWhere.position.x == pointA.x) { transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z); }
-        else if (PlayerWhere.position.x == pointB.x) { transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z); }
+        if (EnemyLocation.position.x == pointA.x) { transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z); }
+        else if (EnemyLocation.position.x == pointB.x) { transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z); }
     }
 
     void AliveStatus() 

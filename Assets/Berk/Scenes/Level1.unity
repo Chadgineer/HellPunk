@@ -2569,7 +2569,7 @@ MonoBehaviour:
   pointB: {x: 19, y: -9.2, z: 0}
   speed: 0.5
   followSpeed: 1
-  PlayerWhere: {fileID: 1159081637}
+  EnemyLocation: {fileID: 1159081637}
   Health: 100
   rb: {fileID: 1159081634}
   playerDetected: 0
