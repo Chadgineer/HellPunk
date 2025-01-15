@@ -15,6 +15,7 @@ TagManager:
   - GateBlocker
   - Attack
   - Enemy
+  - HP Collectible
   layers:
   - Default
   - TransparentFX
