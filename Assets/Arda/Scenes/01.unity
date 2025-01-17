@@ -654,6 +654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemytroll (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3332475652979211431, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3612931767452553200, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
       propertyPath: pointA.x
       value: 24
@@ -669,6 +673,10 @@ PrefabInstance:
     - target: {fileID: 3612931767452553200, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
       propertyPath: pointB.y
       value: 3.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917089369627589065, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5442950215702218667, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
       propertyPath: m_LocalScale.x
@@ -1206,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemytroll
       objectReference: {fileID: 0}
+    - target: {fileID: 3332475652979211431, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3612931767452553200, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
       propertyPath: pointA.x
       value: 9.18
@@ -1285,6 +1297,8 @@ GameObject:
   m_Component:
   - component: {fileID: 239105121}
   - component: {fileID: 239105120}
+  - component: {fileID: 239105123}
+  - component: {fileID: 239105122}
   m_Layer: 0
   m_Name: Circle (3)
   m_TagString: HP Collectible
@@ -1359,6 +1373,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &239105122
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239105119}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
+--- !u!58 &239105123
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239105119}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &263323716 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8221638547178294311, guid: 5fe5cdb0c948977488dafbf8ede666e7, type: 3}
@@ -4619,6 +4695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemytroll (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3332475652979211431, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3612931767452553200, guid: 615ad98d4ab164b429e2fcbf1cf15f59, type: 3}
       propertyPath: pointA.x
       value: -18.48
@@ -5859,6 +5939,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1802371871}
   - component: {fileID: 1802371870}
+  - component: {fileID: 1802371873}
+  - component: {fileID: 1802371872}
   m_Layer: 0
   m_Name: Circle (4)
   m_TagString: HP Collectible
@@ -5933,6 +6015,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1802371872
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802371869}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
+--- !u!58 &1802371873
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802371869}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1815030207
 GameObject:
   m_ObjectHideFlags: 0

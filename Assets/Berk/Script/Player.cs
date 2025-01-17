@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         originalScale = transform.localScale;
+        Health = 100;
     }
 
     private void FixedUpdate()
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
         MoveSpeedConditions();
         GateOpener();
         MeleeAttack();
+        AliveStatus();
     }
 
     private void HandleMovement()
@@ -80,6 +82,8 @@ public class Player : MonoBehaviour
         if (Health > 0) { Alive = true; }
         else { Alive = false; }
 
+        if (Health > 100) { Health = 100; }
+
         if (Alive == false) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
     }
 
@@ -103,9 +107,8 @@ public class Player : MonoBehaviour
     }
     IEnumerator TakingDamage() 
     { 
-        Health -=25;
-        yield return new WaitForSeconds(0.5f);
-        
+        Health -=12.5f;
+        yield return new WaitForSeconds(0.5f);   
     }
     IEnumerator RightAttack() 
     { 
@@ -138,12 +141,9 @@ public class Player : MonoBehaviour
                 touchingWall = true;
             }
         }
+        
+        
 
-        if (collision.collider.CompareTag("Enemy")) 
-        { 
-        
-        } 
-        
         if (collision.collider.CompareTag("Key"))
         {
             key = true;
@@ -166,8 +166,6 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        
-
         foreach (ContactPoint2D contact in collision.contacts)
         {
             float angle = Vector2.Angle(contact.normal, Vector2.up);
@@ -190,4 +188,21 @@ public class Player : MonoBehaviour
             PlatformMoving = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("HP Collectible"))
+        {
+            if (Health < 100)
+            {
+                Health += 50;
+                Destroy(collision.gameObject);
+            }
+        }
+        if (collision.CompareTag("Enemy"))
+        {
+            StartCoroutine(TakingDamage());
+        }
+    }
+
 }

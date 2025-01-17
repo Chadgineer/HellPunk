@@ -16,6 +16,7 @@ TagManager:
   - Attack
   - Enemy
   - HP Collectible
+  - white
   layers:
   - Default
   - TransparentFX
