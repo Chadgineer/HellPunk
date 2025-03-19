@@ -2644,7 +2644,7 @@ PrefabInstance:
     - target: {fileID: 7048784334707209433, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
       propertyPath: LeftMelee
       value: 
-      objectReference: {fileID: 1304281883019378719}
+      objectReference: {fileID: 0}
     - target: {fileID: 7048784334707209433, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
       propertyPath: RightMelee
       value: 
@@ -2654,6 +2654,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 534158552}
     - target: {fileID: 7048784334707209433, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
+      propertyPath: sceneManagement
+      value: 
+      objectReference: {fileID: 405509043}
+    - target: {fileID: 9085561903405533584, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
+      propertyPath: GateBlocker
+      value: 
+      objectReference: {fileID: 534158552}
+    - target: {fileID: 9085561903405533584, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
       propertyPath: sceneManagement
       value: 
       objectReference: {fileID: 405509043}
@@ -2669,11 +2677,6 @@ PrefabInstance:
 --- !u!1 &1304281883019378718 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1447343793131838145, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
-  m_PrefabInstance: {fileID: 1304281883019378717}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1304281883019378719 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9211621800735127631, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
   m_PrefabInstance: {fileID: 1304281883019378717}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1607185928947732079

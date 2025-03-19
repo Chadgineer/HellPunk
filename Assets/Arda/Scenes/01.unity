@@ -3552,7 +3552,7 @@ PrefabInstance:
     - target: {fileID: 7048784334707209433, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
       propertyPath: LeftMelee
       value: 
-      objectReference: {fileID: 891747102}
+      objectReference: {fileID: 0}
     - target: {fileID: 7048784334707209433, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
       propertyPath: jumpSpeed
       value: 15
@@ -4122,11 +4122,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &891747102 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9211621800735127631, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
-  m_PrefabInstance: {fileID: 775375165}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &909759335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1447343793131838145, guid: 1e6702bb5c5a58747b338f556729a356, type: 3}
@@ -5079,6 +5074,10 @@ PrefabInstance:
     - target: {fileID: 6953179511665152146, guid: 054962f960584b54e9dd64a063362c87, type: 3}
       propertyPath: m_Name
       value: PlatformPingPong
+      objectReference: {fileID: 0}
+    - target: {fileID: 6953179511665152146, guid: 054962f960584b54e9dd64a063362c87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8223326566465938081, guid: 054962f960584b54e9dd64a063362c87, type: 3}
       propertyPath: speed
