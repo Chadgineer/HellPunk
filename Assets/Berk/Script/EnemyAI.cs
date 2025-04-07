@@ -38,6 +38,7 @@ public class EnemyAI : MonoBehaviour
 
         pingpong();
         EnemyDirection();
+        AliveStatus();
     }
 
     void pingpong()
@@ -55,12 +56,12 @@ public class EnemyAI : MonoBehaviour
         else if (EnemyLocation.position.x == pointB.x) { transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z); }
     }
 
-    void AliveStatus() 
-    { 
+    void AliveStatus()
+    {
         if (Health > 0) { Alive = true; }
-        else {  Alive = false; }
+        else { Alive = false; }
 
-        if (Alive == false) { gameObject.SetActive(false); } 
+        if (Alive == false) { gameObject.SetActive(false); }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -79,14 +80,6 @@ public class EnemyAI : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerDetected = false;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

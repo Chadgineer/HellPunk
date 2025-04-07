@@ -24,10 +24,14 @@ public class Player : MonoBehaviour
     [SerializeField] private bool grounded = true;
 
     public GameObject GateBlocker;
-    public GameObject meleeAttack;  
+    public GameObject meleeAttack;
 
     public Rigidbody2D rigidbodyPlayer;
     private Vector3 originalScale;
+
+    public float Charge;
+    public GameObject projectile;
+    private bool projectileCooldown;
 
     private void Start()
     {
@@ -43,19 +47,20 @@ public class Player : MonoBehaviour
         GateOpener();
         MeleeAttack();
         AliveStatus();
+        RangedAttack();
     }
 
     private void HandleMovement()
     {
         Vector2 newVelocity = rigidbodyPlayer.velocity;
 
-        
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             newVelocity.x = -moveSpeed;
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
             direction = 1;
-                
+
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -85,39 +90,62 @@ public class Player : MonoBehaviour
         if (Alive == false) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
     }
 
-    public void MoveSpeedConditions() 
+    public void MoveSpeedConditions()
     {
         if (PlatformMoving == true) { moveSpeed = 20f; }
         else { moveSpeed = 7.5f; }
     }
-    public void GateOpener() 
-    { 
+    public void GateOpener()
+    {
         if (key == true) { GateBlocker.SetActive(false); }
     }
 
-    public void MeleeAttack() 
+    public void MeleeAttack()
     {
-        if (Input.GetMouseButton(0))    
+        if (Input.GetMouseButton(0))
         {
             StartCoroutine(Attack());
         }
     }
-    IEnumerator TakingDamage() 
-    { 
-        Health -=12.5f;
-        yield return new WaitForSeconds(0.5f);   
+
+    public void RangedAttack()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            StartCoroutine(ProjectileAttack());
+        }
+    }
+
+    IEnumerator TakingDamage()
+    {
+        Health -= 12.5f;
+        yield return new WaitForSeconds(0.5f);
     }
 
     IEnumerator Attack()
     {
-        if (AttackoOnCooldown == false) 
-        { 
+        if (AttackoOnCooldown == false )
+        {
             meleeAttack.SetActive(true);
             yield return new WaitForSeconds(0.1f);
             meleeAttack.SetActive(false);
             AttackoOnCooldown = true;
             yield return new WaitForSeconds(0.9f);
-            AttackoOnCooldown = false; 
+            AttackoOnCooldown = false;
+        }
+    }
+
+    IEnumerator ProjectileAttack() 
+    {
+
+        if (projectileCooldown == false && Charge > 0)
+        { 
+            Charge--;
+            Instantiate(projectile, transform.position, quaternion.identity);
+            projectileCooldown = true;
+            
+            yield return new WaitForSeconds(0.9f);
+            projectileCooldown = false;  
         }
     }
 
@@ -127,11 +155,11 @@ public class Player : MonoBehaviour
         {
             float angle = Vector2.Angle(contact.normal, Vector2.up);
 
-            if (angle < 45f) 
+            if (angle < 45f)
             {
                 grounded = true;
             }
-        } 
+        }
 
         if (collision.collider.CompareTag("Key"))
         {
@@ -147,11 +175,12 @@ public class Player : MonoBehaviour
         {
             PlatformMoving = true;
         }
-        if (collision.collider.CompareTag("Gate")) 
+        if (collision.collider.CompareTag("Gate"))
         {
             sceneManagement.NextLevel();
         }
     }
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -165,12 +194,17 @@ public class Player : MonoBehaviour
                 return;
             }
         }
+
+        if (collision.collider.CompareTag("Holdable"))
+        {
+            grounded = true;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         grounded = false;
-        
+
         if (collision.collider.CompareTag("PlatformMoving"))
         {
             PlatformMoving = false;
@@ -190,6 +224,12 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             StartCoroutine(TakingDamage());
+        }
+
+        if (collision.CompareTag("Charge"))
+        {
+            Charge++;
+            Destroy(collision.gameObject);
         }
     }
 

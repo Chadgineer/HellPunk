@@ -3,7 +3,12 @@ guid: 60e9fab4fd8ad344699361f256f07510
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sceneManagement: {instanceID: 0}
+  - GateBlocker: {instanceID: 0}
+  - meleeAttack: {instanceID: 0}
+  - rigidbodyPlayer: {instanceID: 0}
+  - projectile: {fileID: 1640744058391103722, guid: 0bf9d077bbc7e574d999516cf109722f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

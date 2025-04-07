@@ -17,6 +17,9 @@ TagManager:
   - Enemy
   - HP Collectible
   - white
+  - Holdable
+  - Charge
+  - Projectile
   layers:
   - Default
   - TransparentFX
