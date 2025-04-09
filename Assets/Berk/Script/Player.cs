@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public bool key = false;
     public bool PlatformMoving = false;
     private bool AttackoOnCooldown;
-    public int direction; // 1 = left, 2 = right
+    public int direction; 
 
     [SerializeField] private float Health = 100;
     private bool Alive = true;
@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
     public GameObject GateBlocker;
     public GameObject meleeAttack;
+    public Animator animator;
 
     public Rigidbody2D rigidbodyPlayer;
     private Vector3 originalScale;
@@ -58,19 +59,21 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             newVelocity.x = -moveSpeed;
-            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
+            transform.localScale = originalScale;
             direction = 1;
-
+            animator.SetInteger("AnimState", 2);
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             newVelocity.x = moveSpeed;
-            transform.localScale = originalScale;
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
             direction = 2;
+            animator.SetInteger("AnimState", 2);
         }
         else
         {
             newVelocity.x = 0;
+            animator.SetInteger("AnimState", 0);
         }
         if (grounded && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
         {
@@ -126,12 +129,13 @@ public class Player : MonoBehaviour
     {
         if (AttackoOnCooldown == false )
         {
+            animator.SetBool("Attack", true);
+            yield return new WaitForSeconds(0.5f);
             meleeAttack.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
+            animator.SetBool("Attack", false);
             meleeAttack.SetActive(false);
-            AttackoOnCooldown = true;
-            yield return new WaitForSeconds(0.9f);
-            AttackoOnCooldown = false;
+            
         }
     }
 
