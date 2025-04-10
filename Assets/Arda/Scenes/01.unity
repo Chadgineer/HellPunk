@@ -6932,9 +6932,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 554571840}
     - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
+      propertyPath: jumpSpeed
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
       propertyPath: GateBlocker
       value: 
       objectReference: {fileID: 1534800728}
+    - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
+      propertyPath: sceneManagement
+      value: 
+      objectReference: {fileID: 305918083}
     - target: {fileID: 3680011243768435284, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
       propertyPath: GateBlocker
       value: 

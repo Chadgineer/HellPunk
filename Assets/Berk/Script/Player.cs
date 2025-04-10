@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 {
     public SceneManagement sceneManagement;
 
-    public float jumpSpeed = 10f;
-    public float moveSpeed = 7.5f;
+    public float jumpSpeed = 7.5f;
+    public float moveSpeed = 5f;
     public bool key = false;
     public bool PlatformMoving = false;
     private bool AttackoOnCooldown;
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
     public void MoveSpeedConditions()
     {
         if (PlatformMoving == true) { moveSpeed = 5f; }
-        else { moveSpeed = 7.5f; }
+        else { moveSpeed = 5f; }
     }
     public void GateOpener()
     {

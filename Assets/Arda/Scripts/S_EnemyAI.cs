@@ -17,7 +17,7 @@ public class S_EnemyAI : MonoBehaviour
     public Transform EnemyLocation;
     private Vector3 originalScale;
 
-    [SerializeField] private float Health = 200;
+    [SerializeField] private float Health = 50;
     private bool Alive = true;
     private bool Death = false;
 

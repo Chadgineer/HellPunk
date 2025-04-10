@@ -5,8 +5,10 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - sceneManagement: {instanceID: 0}
-  - GateBlocker: {instanceID: 0}
+  - GateBlocker: {fileID: 8654287388969792534, guid: 9051d0c6c8dfe5e499d16e73dacb42a9, type: 3}
   - meleeAttack: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - healthBar: {instanceID: 0}
   - rigidbodyPlayer: {instanceID: 0}
   - projectile: {fileID: 1640744058391103722, guid: 0bf9d077bbc7e574d999516cf109722f, type: 3}
   executionOrder: 0
