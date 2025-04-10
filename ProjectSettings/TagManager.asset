@@ -20,6 +20,7 @@ TagManager:
   - Holdable
   - Charge
   - Projectile
+  - EnemyAttackCollider
   layers:
   - Default
   - TransparentFX

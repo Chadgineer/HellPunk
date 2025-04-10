@@ -34,6 +34,9 @@ public class Player : MonoBehaviour
     public GameObject projectile;
     private bool projectileCooldown;
 
+    private float damageCooldown = 0.7f; 
+    private float lastHitTime = -999f;
+
     private void Start()
     {
         originalScale = transform.localScale;
@@ -95,7 +98,7 @@ public class Player : MonoBehaviour
 
     public void MoveSpeedConditions()
     {
-        if (PlatformMoving == true) { moveSpeed = 20f; }
+        if (PlatformMoving == true) { moveSpeed = 5f; }
         else { moveSpeed = 7.5f; }
     }
     public void GateOpener()
@@ -183,6 +186,17 @@ public class Player : MonoBehaviour
         {
             sceneManagement.NextLevel();
         }
+
+        if (collision.collider.CompareTag("EnemyAttackCollider"))
+        {
+            // Only take damage if cooldown has passed
+            if (Time.time - lastHitTime > damageCooldown)
+            {
+                Health -= 20;
+                lastHitTime = Time.time;
+            }
+         
+        }
     }
 
 
@@ -235,6 +249,7 @@ public class Player : MonoBehaviour
             Charge++;
             Destroy(collision.gameObject);
         }
+
     }
 
 }
