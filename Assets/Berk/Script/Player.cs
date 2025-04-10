@@ -1,9 +1,7 @@
-using JetBrains.Annotations;
 using System.Collections;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -26,7 +24,7 @@ public class Player : MonoBehaviour
     public GameObject GateBlocker;
     public GameObject meleeAttack;
     public Animator animator;
-    public Slider healthBar;
+    public UnityEngine.UI.Image healthBar;
 
     public Rigidbody2D rigidbodyPlayer;
     private Vector3 originalScale;
@@ -95,6 +93,8 @@ public class Player : MonoBehaviour
         if (Health > 100) { Health = 100; }
 
         if (Alive == false) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
+
+        healthBar.fillAmount = Health;
     }
 
     public void MoveSpeedConditions()
