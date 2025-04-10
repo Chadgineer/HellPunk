@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public GameObject GateBlocker;
     public GameObject meleeAttack;
     public Animator animator;
+    public Slider healthBar;
 
     public Rigidbody2D rigidbodyPlayer;
     private Vector3 originalScale;
@@ -138,7 +139,6 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             animator.SetBool("Attack", false);
             meleeAttack.SetActive(false);
-            
         }
     }
 
@@ -189,13 +189,11 @@ public class Player : MonoBehaviour
 
         if (collision.collider.CompareTag("EnemyAttackCollider"))
         {
-            // Only take damage if cooldown has passed
             if (Time.time - lastHitTime > damageCooldown)
             {
                 Health -= 20;
                 lastHitTime = Time.time;
             }
-         
         }
     }
 
