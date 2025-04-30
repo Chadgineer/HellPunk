@@ -16,4 +16,9 @@ public class SceneManagement : MonoBehaviour
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(nextSceneIndex);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
