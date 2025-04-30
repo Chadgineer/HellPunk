@@ -13,8 +13,9 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     public bool key = false;
     public bool PlatformMoving = false;
-    private bool AttackoOnCooldown;
+    private bool attackOnCooldown;
     public int direction; 
+
 
     [SerializeField] private float Health = 100;
     private bool Alive = true;
@@ -106,15 +107,6 @@ public class Player : MonoBehaviour
     {
         if (key == true) { GateBlocker.SetActive(false); }
     }
-
-    public void MeleeAttack()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            StartCoroutine(Attack());
-        }
-    }
-
     public void RangedAttack()
     {
         if (Input.GetMouseButton(1))
@@ -123,24 +115,40 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void MeleeAttack()
+    {
+        if (Input.GetMouseButtonDown(0) && !attackOnCooldown)
+        {
+            StartCoroutine(Attack());
+        }
+    }
+
+    private IEnumerator Attack()
+    {
+        attackOnCooldown = true;
+
+        animator.SetBool("Attack", true);
+        yield return new WaitForSeconds(0.5f);
+
+        meleeAttack.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+
+        meleeAttack.SetActive(false);
+        animator.SetBool("Attack", false);
+
+        // Opsiyonel: cooldown süresi (örneðin 0.3 saniye)
+        yield return new WaitForSeconds(0.3f);
+
+        attackOnCooldown = false;
+    }
+
     IEnumerator TakingDamage()
     {
         Health -= 12.5f;
         yield return new WaitForSeconds(0.5f);
     }
 
-    IEnumerator Attack()
-    {
-        if (AttackoOnCooldown == false )
-        {
-            animator.SetBool("Attack", true);
-            yield return new WaitForSeconds(0.5f);
-            meleeAttack.SetActive(true);
-            yield return new WaitForSeconds(0.2f);
-            animator.SetBool("Attack", false);
-            meleeAttack.SetActive(false);
-        }
-    }
+   
 
     IEnumerator ProjectileAttack() 
     {
