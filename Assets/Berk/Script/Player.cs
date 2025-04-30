@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     public bool key = false;
     public bool PlatformMoving = false;
-    private bool attackOnCooldown;
+    [SerializeField] private bool attackOnCooldown;
     public int direction; 
 
 
@@ -255,7 +255,5 @@ public class Player : MonoBehaviour
             Charge++;
             Destroy(collision.gameObject);
         }
-
     }
-
 }
