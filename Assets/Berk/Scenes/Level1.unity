@@ -3719,7 +3719,7 @@ PrefabInstance:
     - target: {fileID: 4079388500948055215, guid: c5140d5baa491474fa845cdde6859030, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1600441626}
+      objectReference: {fileID: 747659192}
     - target: {fileID: 4411197330403457395, guid: c5140d5baa491474fa845cdde6859030, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.59
