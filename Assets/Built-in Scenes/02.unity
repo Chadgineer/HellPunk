@@ -1749,7 +1749,7 @@ PrefabInstance:
     - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 878279260}
+      objectReference: {fileID: 109698882}
     - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
       propertyPath: jumpSpeed
       value: 7.5
@@ -3394,7 +3394,7 @@ SpriteRenderer:
   m_Size: {x: 20.48, y: 15.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &547846368

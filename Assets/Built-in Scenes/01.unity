@@ -5847,7 +5847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1425675533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7711,7 +7711,7 @@ PrefabInstance:
     - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 554571840}
+      objectReference: {fileID: 802063419}
     - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
       propertyPath: jumpSpeed
       value: 7.5
@@ -7724,6 +7724,10 @@ PrefabInstance:
       propertyPath: GateBlocker
       value: 
       objectReference: {fileID: 1534800728}
+    - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 1425675532}
     - target: {fileID: 2811977442673156457, guid: d39261ac330a84d46b87fe85254635f6, type: 3}
       propertyPath: sceneManagement
       value: 
