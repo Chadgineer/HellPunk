@@ -1,10 +1,8 @@
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public SceneManagement sceneManagement;
@@ -14,8 +12,9 @@ public class Player : MonoBehaviour
     public bool key = false;
     public bool PlatformMoving = false;
     [SerializeField] private bool attackOnCooldown;
-    public int direction; 
+    public int direction;
 
+    public GameObject deathScreen;
 
     [SerializeField] private float Health = 100;
     private bool Alive = true;
@@ -25,7 +24,7 @@ public class Player : MonoBehaviour
     public GameObject GateBlocker;
     public GameObject meleeAttack;
     public Animator animator;
-    public UnityEngine.UI.Image healthBar;
+    public Slider healthBar;
 
     public Rigidbody2D rigidbodyPlayer;
     private Vector3 originalScale;
@@ -93,9 +92,9 @@ public class Player : MonoBehaviour
 
         if (Health > 100) { Health = 100; }
 
-        if (Alive == false) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
+        if (Alive == false) { deathScreen.SetActive(true); }
 
-        healthBar.fillAmount = Health;
+        healthBar.value = Health; 
     }
 
     public void MoveSpeedConditions()
