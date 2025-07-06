@@ -1206,7 +1206,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6274308510983587843, guid: 054962f960584b54e9dd64a063362c87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.339499
+      value: 33.67
       objectReference: {fileID: 0}
     - target: {fileID: 6274308510983587843, guid: 054962f960584b54e9dd64a063362c87, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1248,6 +1248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformPingPong
       objectReference: {fileID: 0}
+    - target: {fileID: 6953179511665152146, guid: 054962f960584b54e9dd64a063362c87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8223326566465938081, guid: 054962f960584b54e9dd64a063362c87, type: 3}
       propertyPath: speed
       value: 0.25
@@ -1271,7 +1275,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6953179511665152146, guid: 054962f960584b54e9dd64a063362c87, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 711829055}
   m_SourcePrefab: {fileID: 100100000, guid: 054962f960584b54e9dd64a063362c87, type: 3}
 --- !u!1 &188760914
 GameObject:
@@ -3782,7 +3789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &619710715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4512,6 +4519,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6953179511665152146, guid: 054962f960584b54e9dd64a063362c87, type: 3}
   m_PrefabInstance: {fileID: 181058772}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &711829055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711829051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5e1e485cea8bc499105ab6ae57cfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointA: {x: 11.42, y: -10.6, z: 0}
+  pointB: {x: 33.67, y: -10.6, z: 0}
+  pingpongSpeed: 0.15
 --- !u!1 &716098895
 GameObject:
   m_ObjectHideFlags: 0
